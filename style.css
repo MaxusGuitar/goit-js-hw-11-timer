@@ -1,0 +1,45 @@
+body {
+  text-align: center;
+  background: url(https://itzine.ru/wp-content/uploads/2021/07/maxresdefault-1-1.jpg);
+  background-size: 107%;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.countdown-title {
+  font-weight: 100;
+  font-size: 100px;
+  margin: 80px 0px 20px;
+  text-shadow: -5px 0 rgb(255, 255, 255), 0 5px rgb(255, 255, 255),
+    5px 0 rgb(255, 255, 255), 0 -5px rgb(255, 255, 255);
+}
+
+.timer {
+  font-family: sans-serif;
+  color: #fff;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 60px;
+}
+
+.countdown-number {
+  padding: 10px;
+  border-radius: 8px;
+  background: #2300c0;
+  display: inline-block;
+  opacity: 0.8;
+}
+
+.field {
+  padding: 15px;
+  border-radius: 3px;
+  background: #810000;
+  display: inline-block;
+}
+
+.countdown-text {
+  display: block;
+  padding-top: 5px;
+  font-size: 16px;
+}
