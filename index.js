@@ -1,8 +1,8 @@
 function getTime(t) {
   const time = Date.parse(t) - Date.parse(new Date());
-  const seconds = Math.floor((time / 1000) % 60);
-  const minutes = Math.floor((time / 1000 / 60) % 60);
-  const hours = Math.floor((time / (1000 * 60 * 60)) % 24);
+  const seconds = Math.floor((time % (1000 * 60)) / 1000);
+  const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+  const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const days = Math.floor(time / (1000 * 60 * 60 * 24));
   return {
     'total': time,
@@ -19,9 +19,10 @@ function initializeClock(id, t) {
   const hoursSpan = clock.querySelector('.hours');
   const minutesSpan = clock.querySelector('.minutes');
   const secondsSpan = clock.querySelector('.seconds');
- 
+    
   function updateClock() {
-    const time = getTime(t);
+      const time = getTime(t);
+      
     daysSpan.innerHTML = time.days;
     hoursSpan.innerHTML = ('0' + time.hours).slice(-2);
     minutesSpan.innerHTML = ('0' + time.minutes).slice(-2);
@@ -30,8 +31,8 @@ function initializeClock(id, t) {
   }
  
   updateClock();
-  setInterval(updateClock, 1000);
+    setInterval(updateClock, 1000);
 }
  
-const deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000); 
+var deadline = 'December 17 2021 ';
 initializeClock('timer-1', deadline);
